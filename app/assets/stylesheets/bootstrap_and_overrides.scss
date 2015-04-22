@@ -1,0 +1,11 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+ul.nav.navbar-nav {
+  li:hover {
+    background-color: pink;
+    a {
+      color: white;
+    }
+  }
+}

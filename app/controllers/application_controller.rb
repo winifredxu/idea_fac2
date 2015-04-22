@@ -12,13 +12,13 @@ class ApplicationController < ActionController::Base
   def user_signed_in?
     session[:user_id].present?
   end
-  helper_method :user_signed_in? #makes it accessible in the views, not just controller
+  helper_method :user_signed_in?
 
   private
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if user_signed_in?
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
     rescue ActiveRecord::RecordNotFound
   end
-  helper_method :current_user #makes it accessible in the views, not just 
+  helper_method :current_user
 end
